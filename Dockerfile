@@ -6,7 +6,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nginx git
 EXPOSE 80
 #ADD  akhikachmoney/akhikachmoney/ /var/www/html/
 RUN chown -R www-data:www-data /var/log/nginx
-RUN mkdir /var/lib/nginx/body
+RUN mkdir -p /var/lib/nginx/body
 RUN chmod 777 /var/log/nginx/
 RUN chmod 777 /etc/nginx/nginx.conf
 RUN chmod 777 /var/run 
