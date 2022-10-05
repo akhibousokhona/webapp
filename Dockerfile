@@ -14,9 +14,9 @@ RUN chmod 777 /var/log/nginx/error.log
 RUN rm -rf /var/log/nginx/access.log
 RUN rm -Rf /var/www/html/*
 # support running as arbitrary user which belogs to the root group
-RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
+#RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
 # users are not allowed to listen on priviliged ports
-RUN sed -i.bak 's/listen\(.*\)80;/listen 80;/' /etc/nginx/conf.d/default.conf
+#RUN sed -i.bak 's/listen\(.*\)80;/listen 80;/' /etc/nginx/conf.d/default.conf
 # comment user directive as master process is run as user in OpenShift anyhow
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 RUN git clone https://github.com/akhibousokhona/akhikachmoney.git /var/www/html/
